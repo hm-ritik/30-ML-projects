@@ -33,6 +33,11 @@ x_test=x_test.reshape(-1,28,28,1)
 
 print(x_train.shape)
 print(x_test.shape)
+x=int(input("enter the Index number"))
+import matplotlib.pyplot as plt 
+plt.imshow(x_train[x] , camp='grey)
+plt.title(" Label" + x_train[x])
+plt.show()           
 
 "building model by using CNN"
 "conv2d to make model able to detect edge , shape of the  image"
@@ -70,4 +75,5 @@ model.compile(
 "Train the model"
 model.fit(x_train,y_train, epochs=8 ,validation_data=(x_test, y_test) )
 test_loss, test_acc=model.evaluate(x_test,y_test, verbose=2)
+
 print(test_acc)
